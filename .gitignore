@@ -105,3 +105,6 @@ dist
 
 # VS Code config folder
 .vscode/
+
+# General config
+config.js
