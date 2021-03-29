@@ -11,5 +11,5 @@ var TodosSchema = new mongoose.Schema({
 })
 
 
-// Exporting the model, which will create a collection in the database (in the db_url) with the name toDo (first parameter)
+// Exporting the model, which will create a collection in the database (in the db_url) with the name todos (first parameter in plural)
 module.exports = mongoose.model('ToDo', TodosSchema);
