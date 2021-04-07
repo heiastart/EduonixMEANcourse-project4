@@ -13,10 +13,11 @@ var app = express();
 // Set up the mongoose/MongoDB connection
 mongoose.connect(db_url, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error: '));
+//var db = mongoose.connection;
+mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error: '));
 
 // Important app-use configurations
+// From P6 -> set up this in a separate file, called initDB.js
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/todo', endpoints);
